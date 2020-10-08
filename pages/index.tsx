@@ -1,9 +1,9 @@
-import Head from 'next/head'
+import { Box } from '@chakra-ui/core'
 
 export default function Home() {
   return (
-    <div>
+    <Box>
       Welcome to <a href="https://nextjs.org">Next.js!</a>
-    </div>
+    </Box>
   )
 }
