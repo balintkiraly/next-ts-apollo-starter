@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { useQuery } from '@apollo/client'
 import { Box, Image, Grid, Heading } from '@chakra-ui/core'
 
-import QUERY from './exampleQuery.graphql'
+import QUERY from '../graphql/exampleQuery.graphql'
 
 export default function Home() {
   const { data, loading, error } = useQuery(QUERY)
