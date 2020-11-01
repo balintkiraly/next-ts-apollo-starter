@@ -1,13 +1,11 @@
 
 import React from 'react'
 import Head from 'next/head'
-import { useQuery } from '@apollo/client'
 import { Box, Image, Grid, Heading } from '@chakra-ui/core'
-
-import QUERY from '../graphql/exampleQuery.graphql'
+import { useCharactersListQuery } from '../graphql/character-list-query.generated'
 
 export default function Home() {
-  const { data, loading, error } = useQuery(QUERY)
+  const { data, loading, error } = useCharactersListQuery()
   
   if (loading) {
     return <Heading>Loading...</Heading>
