@@ -1,0 +1,10 @@
+{
+  characters: characters {
+    results {
+      id
+      name
+      status
+      image
+    }
+  }
+}
