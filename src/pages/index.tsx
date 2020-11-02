@@ -1,8 +1,8 @@
 import React from "react"
 import Head from "next/head"
 import { Box, Grid, Heading } from "@chakra-ui/core"
-import { useCharactersListQuery } from "../graphql/character-list-query.generated"
-import { CharacterCard } "../components/character/card"
+import { useCharactersListQuery } from "@graphql/character/list-query.generated"
+import { CharacterCard } from "@components/character/card"
 
 export default function Home() {
   const { data, loading, error } = useCharactersListQuery()

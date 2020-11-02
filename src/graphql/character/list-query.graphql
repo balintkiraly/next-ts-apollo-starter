@@ -1,5 +1,5 @@
 query CharactersList {
-  characters: characters {
+  characters {
     results {
       id
       name
