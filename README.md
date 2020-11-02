@@ -1,27 +1,49 @@
+# NextJS with TypeScript and ApolloClient
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
-
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/balintkiraly/next-ts-apollo-starter
 ```
 
+### 2. Install the dependencies
+```bash
+yarn install
+```
+> The generator script will run automaticly after the install
+
+### 3. Run the development server
+
+```bash
+yarn dev
+```
+### 4. Open the application
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Learn More
+## How to create a new Query/Mutation
+### 1. Write the query/mutation
+- Create a new file in the `src/graphql` folder with `.graphql` extension.
+- Simply write your query/mutation in the file
 
-To learn more about Next.js, take a look at the following resources:
+Always use a name like in the example
+```GraphQL
+query CharactersList {
+  ...
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. Run the codegen script
+```
+yarn generate
+```
+It will create a new file next to your graphql file with `.generated.ts` extension.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 3. Use it
+You can simpli import the hook from the generated file.
+
 
 ## Deploy on Vercel
 
