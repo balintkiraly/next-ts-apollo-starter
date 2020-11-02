@@ -1,12 +1,12 @@
-
-import React from 'react'
-import Head from 'next/head'
-import { Box, Image, Grid, Heading } from '@chakra-ui/core'
-import { useCharactersListQuery } from '../graphql/character-list-query.generated'
+import React from "react"
+import Head from "next/head"
+import { Box, Grid, Heading } from "@chakra-ui/core"
+import { useCharactersListQuery } from "../graphql/character-list-query.generated"
+import { CharacterCard } "../components/character/card"
 
 export default function Home() {
   const { data, loading, error } = useCharactersListQuery()
-  
+
   if (loading) {
     return <Heading>Loading...</Heading>
   }
@@ -24,13 +24,11 @@ export default function Home() {
         <Heading my={4}>Rick and Morty characters</Heading>
         <Grid templateColumns="repeat(5, 1fr)" gap={6}>
           {data.characters.results.map((character) => (
-            <Box  maxW="sm" borderWidth="1px" rounded="lg"  key={character.id}>
-              <Image src={character.image} />
-
-              <Box textAlign="center" fontWeight="bold" p={3}>
-                {character.name}
-              </Box>
-            </Box>
+            <CharacterCard
+              name={character.name}
+              image={character.image}
+              key={character.id}
+            />
           ))}
         </Grid>
       </Box>
