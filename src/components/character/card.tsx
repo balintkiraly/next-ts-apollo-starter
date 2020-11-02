@@ -1,5 +1,5 @@
-import React from "react"
-import { Box, Image } from "@chakra-ui/core"
+import React from 'react'
+import { Box, Image } from '@chakra-ui/core'
 
 export interface CharacterCardProps {
   name: string
